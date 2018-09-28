@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include <algorithm>
+using namespace std;
+int x[20];
+int main()
+{
+   //freopen("input.txt","r",stdin);
+    int t,i,n;
+    scanf("%d",&t);
+    while(t--)
+    {
+        scanf("%d",&n);
+        for(i=0; i<n; i++)
+            scanf("%d",&x[i]);
+        sort(&x[0],&x[n]);
+       int s=0,k=n;
+       s=x[n-1]*10+n;
+        for(i=0; i<n-1; i++)
+        {
+            if(x[i]==x[i+1])
+                k--;
+        }
+        s+=5*k;
+        printf("%d\n",s);
+    }
+    return 0;
+}
